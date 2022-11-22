@@ -40,8 +40,8 @@ export class App extends Component {
       number,
     };
 
-    const checkName = this.state.contacts.some(item =>
-      item.name.toLowerCase().includes(contact.name.toLowerCase())
+    const checkName = this.state.contacts.some(
+      item => item.name.toLowerCase() === contact.name.toLowerCase()
     );
 
     checkName
@@ -49,14 +49,6 @@ export class App extends Component {
       : this.setState(({ contacts }) => ({
           contacts: [contact, ...contacts],
         }));
-
-    //     this.setState(({ contacts }) => ({
-    //       contacts: contacts.some(item =>
-    //         item.name.toLowerCase().includes(contact.name.toLowerCase())
-    //           ? alert(`${contact.name} is already in contacts`)
-    //           : [contact, ...contacts]
-    //       ),
-    //     }));
   };
 
   changeFilter = e => {
